@@ -34,11 +34,13 @@ class Game {
         //chopsticks activated true/false
         bool play_chopsticks;
 
+        void clean_playGame();
+
         //game objects
         Board board;
         Player players[PLAYER_COUNT];
 
-        Deck file_deck;
+        Vector* file_deck;
 };
 
 #endif
