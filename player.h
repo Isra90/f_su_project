@@ -6,6 +6,7 @@
 #include "termfuncs.h"
 #include "vector.h"
 #include "card.h"
+#include "deck.h"
 using namespace std;
 
 class Player{
@@ -13,13 +14,20 @@ class Player{
 
     Player();
     ~Player();
+    void setPassingHand(Vector* hand);
+    //void setRevealedHand(Vector* hand);
+    //void pushPassingHand(Card &card);
+    void pushRevealedHand(Card &card);
     Vector* getPassingHand();
     Vector* getRevealedCards();
+    Deck getPassingDeck();
+    Deck getRevealedDeck();
     int getScore();
     int getPuddingCount();
 
     private:
-        Vector* hand;
+        Vector* passing_hand;
+        Vector* revealed_hand;
         //constants
 };
 
